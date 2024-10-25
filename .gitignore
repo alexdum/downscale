@@ -7,5 +7,6 @@ nc/
 # NC files in root directory
 /*.nc
 
+models/
 
 sh/logs/
