@@ -5,3 +5,6 @@ python/data/
 
 # NC files in root directory
 /*.nc
+
+
+sh/logs/
