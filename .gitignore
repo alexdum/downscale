@@ -1,0 +1,7 @@
+# Directories to ignore
+zarr/
+python/data/
+.ipynb_checkpoints/
+
+# NC files in root directory
+/*.nc

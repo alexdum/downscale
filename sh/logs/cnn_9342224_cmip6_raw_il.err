@@ -1,0 +1,31 @@
+srun: error: Unable to create step for job 9342224: Invalid generic resource (gres) specification
+Traceback (most recent call last):
+  File "/data/keeling/a/ad87/downscale/python/cnn_encoder_decoder.py", line 9, in <module>
+    import keras
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/__init__.py", line 4, in <module>
+    from keras.api import DTypePolicy
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/api/__init__.py", line 8, in <module>
+    from keras.api import activations
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/api/activations/__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/activations/__init__.py", line 3, in <module>
+    from keras.src.activations.activations import elu
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/activations/activations.py", line 1, in <module>
+    from keras.src import backend
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/backend/__init__.py", line 39, in <module>
+    from keras.src.backend.jax import *  # noqa: F403
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/backend/jax/__init__.py", line 1, in <module>
+    from keras.src.backend.jax import core
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/keras/src/backend/jax/core.py", line 1, in <module>
+    import jax
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/jax/__init__.py", line 25, in <module>
+    from jax._src.cloud_tpu_init import cloud_tpu_init as _cloud_tpu_init
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/jax/_src/cloud_tpu_init.py", line 17, in <module>
+    from jax._src import config
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/jax/_src/config.py", line 27, in <module>
+    from jax._src import lib
+  File "/data/keeling/a/ad87/miniconda3/envs/ml/lib/python3.10/site-packages/jax/_src/lib/__init__.py", line 84, in <module>
+    cpu_feature_guard.check_cpu_features()
+RuntimeError: This version of jaxlib was built using AVX instructions, which your CPU and/or operating system do not support. You may be able work around this issue by building jaxlib from source.
