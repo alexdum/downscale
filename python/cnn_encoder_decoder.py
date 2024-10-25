@@ -26,7 +26,6 @@ jax.config.update('jax_enable_x64', True)
 jax.random.PRNGKey(SEED)
 
 
-
 # Set the working directory
 os.chdir('/data/keeling/a/ad87/downscale')
 
@@ -66,12 +65,6 @@ gmfd_data_norm = normalize(gmfd_data['tas'])
 # Convert data to NumPy arrays for use in Keras
 cmip6_train = cmip6_data_norm.values
 gmfd_train = gmfd_data_norm.values
-
-
-# In[5]:
-
-
-cmip6_train.shape
 
 
 # #### Build the CNN Model (Keras with JAX Backend)
@@ -212,7 +205,6 @@ gmfd_std = gmfd_data['tas'].std().values
 # print(f"Validation MSE: {val_mse}")
 
 
-
 # Generate predictions on validation data
 y_pred = model.predict(X_val)
 
@@ -271,10 +263,20 @@ history = model.fit(
     verbose=1
 )
 
-# Plot the training loss
-plt.plot(history.history['loss'], label='train_loss')
+model.save('models/cnn_encoder_decoder_CNRM-ESM2-1.keras')  # keras format
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(history.history['loss'], label='Training Loss')
+plt.title('Model Training Loss cnn_encoder_decoder_CNRM-ESM2-1')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
 plt.legend()
-plt.show()
+plt.grid(True)
+
+# Save the plot
+plt.savefig(f'png/cnn_encoder_decoder_CNRM-ESM2-1_training_loss_{timestamp}.png', dpi=300, bbox_inches='tight')
+plt.close()  # Close the figure to free memory
 
 
 # #### Apply the Model to CMIP6 Data to Downscale to GMFD Original Resolution
