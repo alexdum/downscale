@@ -11,3 +11,5 @@ models/
 
 sh/logs/
 models/
+plots/
+utils/
